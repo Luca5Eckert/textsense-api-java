@@ -1,6 +1,6 @@
 package com.api.textsense.dto.response;
 
-public record Statistics(
+public record StatisticsResponse(
         int characterCount,
         int wordCount,
         int sentenceCount,

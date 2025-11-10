@@ -3,8 +3,8 @@ package com.api.textsense.dto.response;
 import java.util.List;
 
 public record TextSenseResponse(
-        Statistics statistics,
-        Sentiment sentiment,
+        StatisticsResponse statisticsResponse,
+        SentimentResponse sentimentResponse,
         List<String> keywords
 ) {
 }
