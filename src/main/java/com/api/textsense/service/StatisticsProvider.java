@@ -8,7 +8,7 @@ import java.util.Locale;
 
 @Component
 public class StatisticsProvider {
-    private final static double TIME_PER_CHARACTER_SECONDS = 0.15;
+    private final static double TIME_PER_CHARACTER_SECONDS = 0.075;
 
     public Statistics of(String text) {
         String trimmedText = text.trim();
