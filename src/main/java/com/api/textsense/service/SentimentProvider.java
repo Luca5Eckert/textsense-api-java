@@ -77,7 +77,6 @@ public class SentimentProvider {
             double totalScore = 0.0;
             int sentenceCount = sentences.size();
 
-            // Analisa cada sentença e acumula os scores
             for (CoreSentence sentence : sentences) {
                 String sentiment = sentence.sentiment();
                 int sentenceScore = convertSentimentToScore(sentiment);
@@ -89,11 +88,9 @@ public class SentimentProvider {
                         sentenceScore);
             }
 
-            // Calcula a média
             double averageScore = totalScore / sentenceCount;
             int finalScore = (int) Math.round(averageScore);
 
-            // Garante que o score esteja no intervalo válido [0-4]
             finalScore = Math.max(0, Math.min(4, finalScore));
 
             Label finalLabel = convertScoreToLabel(finalScore);

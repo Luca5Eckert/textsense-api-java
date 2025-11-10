@@ -130,16 +130,13 @@ public class KeyWordProvider {
     private Map<String, Integer> calculateWordFrequency(String text) {
         Map<String, Integer> wordFrequency = new HashMap<>();
 
-        // Normaliza o texto: lowercase
         String normalizedText = text.toLowerCase();
 
-        // Extrai apenas palavras (remove pontuação e números)
         var matcher = WORD_PATTERN.matcher(normalizedText);
 
         while (matcher.find()) {
             String word = matcher.group();
 
-            // Filtra palavras muito curtas e stop words
             if (word.length() >= MIN_WORD_LENGTH && !STOP_WORDS.contains(word)) {
                 wordFrequency.merge(word, 1, Integer::sum);
             }
@@ -168,7 +165,6 @@ public class KeyWordProvider {
             return extract(text, maxKeywords);
         }
 
-        // Combina stop words padrão com customizadas
         Set<String> allStopWords = new HashSet<>(STOP_WORDS);
         allStopWords.addAll(customStopWords.stream()
                 .map(String::toLowerCase)
