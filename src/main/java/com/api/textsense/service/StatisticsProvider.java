@@ -25,7 +25,7 @@ public class StatisticsProvider {
             return 0;
         }
 
-        BreakIterator boundary = BreakIterator.getSentenceInstance(new Locale("pt", "BR"));
+        BreakIterator boundary = BreakIterator.getSentenceInstance(Locale.of("pt", "BR"));
         boundary.setText(trimmedText);
 
         int count = 0;
