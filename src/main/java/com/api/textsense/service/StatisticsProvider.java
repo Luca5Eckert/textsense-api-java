@@ -1,12 +1,14 @@
 package com.api.textsense.service;
 
 import com.api.textsense.model.Statistics;
+import org.springframework.stereotype.Component;
 
 import java.text.BreakIterator;
 import java.util.Locale;
 
+@Component
 public class StatisticsProvider {
-    private final static double TIME_PER_CHARACTER_SECONDS = 0.5;
+    private final static double TIME_PER_CHARACTER_SECONDS = 0.15;
 
     public Statistics of(String text) {
         String trimmedText = text.trim();
